@@ -1,8 +1,11 @@
 import React from 'react'
+import SerachBox from '../component/SerachBox'
 
 function Home() {
   return (
-    <div>Home</div>
+    <div>
+      <SerachBox/>
+    </div>
   )
 }
 
