@@ -1,10 +1,14 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
+import { UserContext } from '../context/UserContext';
 
 function SerachBox() {
+  // Destructuring the values (userData and setUserData) from the context to access the shared state.
+
+    const {userData,setUserData} = useContext(UserContext)
      // State variables to store the username and user data
     const [username,setUserName] =useState('')
-    const [userData,setUserData] = useState()
+   
     // Function to handle the form submission
       const findAccount = (e) => {
         e.preventDefault();
@@ -15,7 +19,7 @@ function SerachBox() {
             setUserData(respose.data)
           })) 
           .catch((error) => {
-            console.log(error)
+            console.log(error.response.data)
           })
         
             
@@ -24,7 +28,7 @@ function SerachBox() {
     
         
     }
-  
+  console.log(userData)
   return (
     <>
     <div>
