@@ -1,0 +1,12 @@
+/* Styles for the navigation bar */
+nav {
+    background-color: black;
+    padding: 16px;
+} 
+/* Styles for the logo within the navigation bar */
+nav .logo {
+    color:  white;
+    font-size: 17px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
