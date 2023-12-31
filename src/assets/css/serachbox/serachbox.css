@@ -1,0 +1,30 @@
+.searchbox {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    margin: auto;
+    margin-top: 50px;
+    padding: 15px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.searchbox h2{
+    text-align: center;
+}
+input[type=text]  {
+    width: 100%;
+    border: 1px solid black;
+    padding: 12px 14px;
+    border-radius: 5px;
+    margin: 9px;
+
+} 
+input[type=submit]  {
+    background-color: black;
+    color: white;
+    margin: 8px;
+    padding: 14px;
+    text-align: center;
+    align-items: center;
+    display: inline-block;
+    width: 100%;
+}

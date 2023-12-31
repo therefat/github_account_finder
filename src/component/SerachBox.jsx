@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react'
 import { UserContext } from '../context/UserContext';
+import '../assets/css/serachbox/serachbox.css'
 
 function SerachBox() {
   // Destructuring the values (userData and setUserData) from the context to access the shared state.
@@ -31,16 +32,17 @@ function SerachBox() {
   console.log(userData)
   return (
     <>
-    <div>
+    <div className='searchbox'>
         {/* Form for entering the username and submitting the search */}
-        <h1>Find Account</h1> 
+        <h2>Find Account</h2> 
         <div>
             <form onSubmit={(e) => findAccount(e)}>
                    {/* Input field for entering the username */}
                 <label htmlFor="username"></label>
-                <input type="text" value={username} name="username" id="" onChange={(e) => setUserName(e.target.value)} /> 
+                <input type="text" value={username} name="username" id="" onChange={(e) => setUserName(e.target.value)} placeholder='Enter Your Username'/> 
                 
-                <button>Submit</button>
+               
+                <input type="submit" value="Find" />
             </form>
         </div>
     </div>
