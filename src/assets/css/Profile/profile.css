@@ -1,0 +1,41 @@
+/* Styling for the profile section */
+.profile {
+  padding-top: 5rem;
+}
+/* Styling for user information container */
+.userinfo{
+    display: flex;
+    flex-direction: column;
+    max-width: 800px;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+    margin: auto;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 2rem;
+    box-shadow: 0 15px 35px rgba(50,50,93,0.1), 0 5px 15px rgba(0,0,0,0.07);
+}
+/* Styling for the profile image container */
+.profile_image {
+    position: relative;
+    background: linear-gradient(150deg, #1d8cf8 20%, #3358f4 100%);
+  } 
+  /* Styling for the profile avatar (user's image) */
+.profile_avatar {
+
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  z-index: 2;
+  transform: translate(-50%, 50%);
+  
+ 
+  border-radius: 50%;
+  box-shadow: 0 15px 35px rgba(50,50,93,0.1), 0 5px 15px rgba(0,0,0,0.07);
+}
+/* Styling for the profile content section */
+.profile_content{
+  margin-top: 6rem;
+  text-align: center;
+}
