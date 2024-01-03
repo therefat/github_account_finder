@@ -8,7 +8,7 @@ function Profile() {
 
       const {userData,setUserData} = useContext(UserContext)
 
-      
+      console.log(userData)
   return (
     <Layout>
        <div className="profile">
@@ -34,7 +34,23 @@ function Profile() {
   {/* Display user's name and link to their GitHub profile */}
 <div className="profile_content">
 <h2>{userData?.name}</h2> <span><a href={userData?.url}>@{userData?.login}</a></span>
+<p>{userData?.location}</p>
 
+</div> 
+<div className="profile_items">
+  <div className="repositorie">
+    <h2>{userData?.public_repos}</h2>
+    <h2>repositorie</h2>
+
+  </div>
+  <div className="flower">
+    <h2>{userData?.followers}</h2>
+    <h2>Followers</h2>
+  </div>
+  <div className="flowing">
+    <h2>{userData?.following}</h2>
+    <h2>Following</h2>
+  </div>
 </div>
     
     
