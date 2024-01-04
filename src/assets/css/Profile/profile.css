@@ -39,3 +39,9 @@
   margin-top: 6rem;
   text-align: center;
 }
+.profile_items {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  justify-content: space-evenly;
+}
