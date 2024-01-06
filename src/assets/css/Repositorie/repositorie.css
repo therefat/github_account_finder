@@ -1,0 +1,13 @@
+/* Apply margin to the container of all repositories */
+.all_repositorie {
+    margin-top: 18px;
+
+}
+/* Style for the additional information section within each repository */
+.other-infof {
+    display: flex;
+    flex-direction: row;
+    gap: 26px;
+    margin:  5px 0;
+    
+}
