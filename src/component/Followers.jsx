@@ -20,7 +20,21 @@ function Followers() {
      },[])
      console.log(fllowerData)
   return (
-    <div>Followers</div>
+    // Display the list of followers along with their avatars and usernames
+    <div className="fllowers">
+      <h1>Followers</h1>
+      {
+        fllowerData && fllowerData.map((fllower) => (
+          <div className="fllowers_info">
+              <div className="fllower-avater">
+                <img src={fllower?.avatar_url} alt="" />
+              </div>
+              <p>{fllower?.login}</p>
+          </div>
+        ))
+      }
+     
+    </div>
   )
 }
 
