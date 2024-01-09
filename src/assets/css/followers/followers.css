@@ -1,0 +1,9 @@
+.fllowers_info {
+    display: flex;
+    flex-direction: row;
+   
+    gap: 25px;
+}
+img {
+    width: 100px;
+}
