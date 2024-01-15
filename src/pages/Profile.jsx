@@ -1,14 +1,36 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import Layout from '../layout/Layout'
 import { UserContext } from '../context/UserContext'
 import "../assets/css/Profile/profile.css"
+import Repositorie from '../component/Repositorie'
+import Followers from '../component/Followers'
+import { useParams } from 'react-router-dom'
+import axios from 'axios'
 
 function Profile() {
       // Destructuring the values (userData and setUserData) from the context to access the shared state.
 
-      const {userData,setUserData} = useContext(UserContext)
+      const {userData,setUserData,setUserName,updateUsername} = useContext(UserContext)
+      const {username} = useParams()
+     
+      useEffect(() => {
+      
+        axios.get('https://api.github.com/users/' + username)
+        .then((respose => {
+             // If the request is successful, update the user data state
+            setUserData(respose.data)
+          })) 
+          .catch((error) => {
+            console.log(error)
+            // console.log(error.response.data)
 
-      console.log(userData)
+          })
+
+    },[])
+      updateUsername(username)
+    
+
+      // console.log(userData)
   return (
     <Layout>
        <div className="profile">
@@ -40,7 +62,7 @@ function Profile() {
 <div className="profile_items">
   <div className="repositorie">
     <h2>{userData?.public_repos}</h2>
-    <h2>repositorie</h2>
+    <h2>Repositorie</h2>
 
   </div>
   <div className="flower">
@@ -54,7 +76,11 @@ function Profile() {
 </div>
     
     
-</div>
+</div> 
+   <div className="otherinfo">
+   <Repositorie/>
+    <Followers/>
+   </div>
        </div>
     </Layout>
   )
