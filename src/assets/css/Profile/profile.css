@@ -45,3 +45,9 @@
   text-align: center;
   justify-content: space-evenly;
 }
+
+.otherinfo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
