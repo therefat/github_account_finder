@@ -2,17 +2,22 @@ import React, { useContext, useEffect, useState } from 'react'
 import { UserContext } from '../context/UserContext'
 import '../assets/css/Repositorie/repositorie.css'
 import axios from 'axios'
+import { useParams } from 'react-router-dom'
 
 function Repositorie() {
     // Destructuring the values (userData and setUserData) from the context to access the shared state.
 
     const {userData,setUserData} = useContext(UserContext)
+    const {username} = useParams()
     const [repoData,setRepoData] = useState()
+    // console.log(username) 
+    console.log(username)
     console.log(userData?.repos_url) 
      // Fetch user repositories data from the GitHub API
     useEffect(() => {
-        axios.get(userData?.repos_url)
+        axios.get(`https://api.github.com/users/${username}/repos`)
         .then(resp => {
+            console.log(resp)
             const sortedRepositories = resp?.data.sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
             setRepoData(sortedRepositories)
         }) 
@@ -23,7 +28,7 @@ function Repositorie() {
     console.log(repoData)
   return (
     <div>
-        <div>
+        <div className='all_repositorie'>
         {/* Displaying a list of repositories with their information. */}
             {
                 repoData && repoData.map((repositorie) => <>
